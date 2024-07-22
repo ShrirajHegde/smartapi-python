@@ -9,25 +9,16 @@ correlation_id = "abc123"
 action = 1
 mode = 1
 
-token_list = [
-    {
-        "exchangeType": 1,
-        "tokens": ["26009"]
-    }
-]
-token_list1 = [
-    {
-        "action": 0,
-        "exchangeType": 1,
-        "tokens": ["26009"]
-    }
-]
+token_list = [{"exchangeType": 1, "tokens": ["26009"]}]
+token_list1 = [{"action": 0, "exchangeType": 1, "tokens": ["26009"]}]
 
 sws = SmartWebSocketV2(AUTH_TOKEN, API_KEY, CLIENT_CODE, FEED_TOKEN)
+
 
 def on_data(wsapp, message):
     logger.info("Ticks: {}".format(message))
     # close_connection()
+
 
 def on_open(wsapp):
     logger.info("on open")
@@ -41,7 +32,6 @@ def on_error(wsapp, error):
 
 def on_close(wsapp):
     logger.info("Close")
-
 
 
 def close_connection():

@@ -1,5 +1,4 @@
 class SmartAPIException(Exception):
-
     def __init__(self, message, code=500):
         """Initialize the exception."""
         super(SmartAPIException, self).__init__(message)
